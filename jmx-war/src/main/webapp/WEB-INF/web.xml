@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee        http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>jmx-example</display-name>
+    <servlet>
+        <servlet-name>JmxServlet</servlet-name>
+        <servlet-class>net.gcolin.jmx.console.war.JmxServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JmxServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secure Content</web-resource-name>
+            <url-pattern>/</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Secure Content</realm-name>
+    </login-config>
+    <security-role>
+        <description>The role required to access restricted content </description>
+        <role-name>manager</role-name>
+    </security-role>
+</web-app>

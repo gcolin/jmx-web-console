@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	      http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <display-name>jmx-example</display-name>
+    <listener>
+        <listener-class>net.gcolin.jmx.console.example.ExampleListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>SimpleJmxServlet</servlet-name>
+        <servlet-class>net.gcolin.jmx.console.example.SimpleJmxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BootStrapJmxServlet</servlet-name>
+        <servlet-class>net.gcolin.jmx.console.example.BootStrapJmxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PureJmxServlet</servlet-name>
+        <servlet-class>net.gcolin.jmx.console.example.PureJmxServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimpleJmxServlet</servlet-name>
+        <url-pattern>/admin/simplejmx</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BootStrapJmxServlet</servlet-name>
+        <url-pattern>/admin/bootstrapjmx</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PureJmxServlet</servlet-name>
+        <url-pattern>/admin/purejmx</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secure Content</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Secure Content</realm-name>
+    </login-config>
+    <security-role>
+        <description>The role required to access restricted content </description>
+        <role-name>manager</role-name>
+    </security-role>
+</web-app>
