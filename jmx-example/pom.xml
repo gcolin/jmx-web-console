@@ -10,7 +10,7 @@
     <packaging>war</packaging>
     <dependencies>
         <dependency>
-            <groupId>net.gcolin.server.maven</groupId>
+            <groupId>net.gcolin.jmxconsole</groupId>
             <artifactId>jmx-web-console</artifactId>
         </dependency>
         <dependency>

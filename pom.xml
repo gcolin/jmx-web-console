@@ -46,17 +46,17 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>net.gcolin.server.maven</groupId>
+                <groupId>net.gcolin.jmxconsole</groupId>
                 <artifactId>jmx-web-console</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>net.gcolin.server.maven</groupId>
+                <groupId>net.gcolin.jmxconsole</groupId>
                 <artifactId>jmx-war</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>net.gcolin.server.maven</groupId>
+                <groupId>net.gcolin.jmxconsole</groupId>
                 <artifactId>jmx-example</artifactId>
                 <version>${project.version}</version>
             </dependency>
