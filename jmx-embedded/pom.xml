@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.gcolin.jmxconsole</groupId>
+		<version>1.1-SNAPSHOT</version>
+		<artifactId>jmx-web-console-parent</artifactId>
+	</parent>
+	<description>An embeddable preconfigured Jetty server with a Jmx servlet.</description>
+	<artifactId>jmx-embedded</artifactId>
+	<name>${project.artifactId}</name>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>net.gcolin.jmxconsole</groupId>
+			<artifactId>jmx-web-console</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>9.4.3.v20170317</version>
+		</dependency>
+	</dependencies>
+
+</project>

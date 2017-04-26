@@ -208,9 +208,9 @@ public class JmxHtml {
         if (result.getResponse() != null) {
             writer.write("<hr/><pre>");
             writer.write(getOutputText());
-            writer.write("</pre><br/>");
+            writer.write("\n");
             writeValue(result.getResponse(), writer);
-            writer.write("<hr/>");
+            writer.write("</pre><hr/>");
         }
     }
 

@@ -20,7 +20,6 @@ import net.gcolin.jmx.console.JmxResult;
 import net.gcolin.jmx.console.JmxTool;
 
 import java.io.IOException;
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;

@@ -9,6 +9,7 @@
         <module>jmx-web-console</module>
         <module>jmx-example</module>
         <module>jmx-war</module>
+        <module>jmx-embedded</module>
     </modules>
 	<licenses>
         <license>
@@ -57,6 +58,11 @@
             </dependency>
             <dependency>
                 <groupId>net.gcolin.jmxconsole</groupId>
+                <artifactId>jmx-embedded</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.gcolin.jmxconsole</groupId>
                 <artifactId>jmx-example</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -77,6 +83,11 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.19.1</version>
+		</plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
