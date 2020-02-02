@@ -54,7 +54,9 @@ public class SimpleJmxServlet extends HttpServlet {
 
             @Override
             protected void writeTopMenu(Writer writer) throws IOException {
-                writer.write("<p><a class='navbar-brand' href='/'>Home</a></p>");
+                writer.write("<p><a href='");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/'>Home</a></p>");
             }
         };
     }
@@ -64,7 +66,8 @@ public class SimpleJmxServlet extends HttpServlet {
             throws ServletException, IOException {
         Map<String, String> parameters = new HashMap<String, String>();
         for (Object elt : req.getParameterMap().entrySet()) {
-            Entry<String, String[]> entry = (Entry<String, String[]>) elt;
+            @SuppressWarnings("unchecked")
+			Entry<String, String[]> entry = (Entry<String, String[]>) elt;
             parameters.put(entry.getKey(), entry.getValue()[0]);
         }
         JmxResult result;
@@ -82,6 +85,13 @@ public class SimpleJmxServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         doGet(req, resp);
+    }
+    
+    protected String getBasePath(String contextPath) {
+    	if (!"/".equals(contextPath)) {
+    		return contextPath;
+		}
+    	return "";
     }
 
 }

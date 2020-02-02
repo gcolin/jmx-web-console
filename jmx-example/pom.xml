@@ -15,7 +15,7 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -23,7 +23,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.15.v20161220</version>
+                <version>9.4.26.v20200117</version>
             </plugin>
         </plugins>
     </build>

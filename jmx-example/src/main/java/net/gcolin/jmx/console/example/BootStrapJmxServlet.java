@@ -63,11 +63,10 @@ public class BootStrapJmxServlet extends SimpleJmxServlet {
 
             @Override
             protected void writeTopMenu(Writer writer) throws IOException {
-                writer.write(
-                        "<nav class='navbar navbar-default'><div class='container-fluid'>"
-                        + "<div class='navbar-header'><a class='navbar-brand' href='/'>"
-                        + "<span class='glyphicon glyphicon-home'></span> Home</a></div>"
-                        + "</div></nav>");
+                writer.write("<nav class='navbar navbar-default'><div class='container-fluid'>" + 
+                		"<div class='navbar-header'><a class='navbar-brand' href='");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/'><span class='glyphicon glyphicon-home'></span> Home</a></div></nav>");
             }
 
             protected void writeTitle(Writer writer) throws IOException {
@@ -76,8 +75,12 @@ public class BootStrapJmxServlet extends SimpleJmxServlet {
             }
 
             protected void writeCss(Writer writer) throws IOException {
-                writer.write("<link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\" />");
-                writer.write("<link href=\"/css/bootstrap-theme.min.css\" rel=\"stylesheet\" />");
+                writer.write("<link href=\"");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/css/bootstrap.min.css\" rel=\"stylesheet\" />");
+                writer.write("<link href=\"");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/css/bootstrap-theme.min.css\" rel=\"stylesheet\" />");
                 writer.write(
                         "<style type='text/css'>.menu li.active>a{font-weight:bold}"
                         + ".col{display:table-cell}.space{padding-left:16px;}</style>");

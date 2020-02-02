@@ -5,12 +5,12 @@
 * Access JMX from a web interface
 * Very fast
 * Stateless (nothing is stored in RAM or in HDD)
-* Need only one Servlet (easy to secure)
+* Need only one Servlet (no JSP or other technology)
 * Easy to use or extend
 * No dependency and compatible with Java SE Embedded 8 Compact 3
 * A running example with different CSS styles (Bootstrap and PureCSS)
-* JRE 1.5+
-* The jmx-war need only servlet api 2.4 (can run on old and new containers)
+* JRE 1.8+
+* The jmx-war need only servlet api 3.0.1 (can run on old and new containers)
 * Very small (minimal war size about 24 KB)
 
 ![screen](https://github.com/gcolin/jmx-web-console/raw/master/screen.png)

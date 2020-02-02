@@ -61,14 +61,18 @@ public class PureJmxServlet extends SimpleJmxServlet {
 
             @Override
             protected void writeTopMenu(Writer writer) throws IOException {
-                writer.write(
-                        "<div class='pure-menu pure-menu-horizontal'><a href='/' "
-                        + "class='pure-menu-heading pure-menu-link'>Home</a></div>");
+            	writer.write("<div class='pure-menu pure-menu-horizontal'><a class='pure-menu-heading pure-menu-link' href='");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/'>Home</a></div>");
             }
 
             protected void writeCss(Writer writer) throws IOException {
-                writer.write("<link href=\"/css/pure-min.css\" rel=\"stylesheet\" />");
-                writer.write("<link href=\"/css/pure-tree.css\" rel=\"stylesheet\" />");
+                writer.write("<link href=\"");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/css/pure-min.css\" rel=\"stylesheet\" />");
+                writer.write("<link href=\"");
+                writer.write(getBasePath(getServletContext().getContextPath()));
+                writer.write("/css/pure-tree.css\" rel=\"stylesheet\" />");
                 writer.write(
                         "<style type='text/css'>.tree li.active>a{font-weight:bold}"
                         + ".col{display:table-cell}.space{padding-left:16px;}</style>");
