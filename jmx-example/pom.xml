@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>net.gcolin.jmxconsole</groupId>
-        <version>1.1</version>
+        <version>1.2-SNAPSHOT</version>
         <artifactId>jmx-web-console-parent</artifactId>
     </parent>
     <artifactId>jmx-example</artifactId>
